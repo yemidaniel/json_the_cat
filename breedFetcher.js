@@ -16,5 +16,9 @@ request(url+breed, (error, response, body) => {
   //console.log(data);
   //console.log('typeof data: ', typeof data);
 
-  console.log("description: ", data[0]["description"]);
+  if (data.length > 0) {
+    console.log("description: ", data[0]["description"]);
+  } else {
+    console.log(`${breed} not found, please check the name and try again.`)
+  }
 });
