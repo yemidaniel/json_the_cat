@@ -1,8 +1,11 @@
 const request = require('request');
 
-const url = "https://api.thecatapi.com/v1/breeds/search?q=siberian";
+var myArgs = process.argv.slice(2);
+var breed = myArgs[0];
 
-request(url, (error, response, body) => {
+const url = "https://api.thecatapi.com/v1/breeds/search?q=";
+
+request(url+breed, (error, response, body) => {
   console.log('error:', error);
   console.log('statusCode:', response && response.statusCode);
   
